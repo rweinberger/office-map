@@ -10,3 +10,15 @@
 {{#each pins}}
   <li>{{this.text}} @ {{this.location}}</li>
 {{/each}}
+
+<h2> add pin </h2>
+<form action='/new_pin' method='post'>
+  <input type='text' placeholder='text' name='text'/>
+  <input type='text' placeholder='location' name='location'/>
+  <select name='userId'>
+    {{#each users}}
+      <option value={{this.userId}}>{{this.firstName}}</option>
+    {{/each}}
+  </select>
+  <input type='submit'/>
+</form>
