@@ -1,2 +1,12 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<h2> users </h2>
+{{#each users}}
+  <li>{{this.firstName}} {{this.lastName}}</li>
+{{/each}}
+
+<h2> pins </h2>
+{{#each pins}}
+  <li>{{this.text}} @ {{this.location}}</li>
+{{/each}}

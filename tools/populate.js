@@ -69,7 +69,7 @@ const populate = () => {
         await userCollection.findOneAndUpdate({userId: op.userId}, {$push: {pins: op._id}})
       }
     })
-    .catch(e => console.log(e));
+    .catch(e => console.error(e));
 }
 
 module.exports = populate;
