@@ -21,6 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use(express.static(__dirname + '/views'));
 
 db.connect('mongodb://localhost:27017/office-map', 'office-map', function(err) {
   if (err) {

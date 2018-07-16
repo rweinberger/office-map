@@ -1,3 +1,17 @@
+<script src="index.js"></script>
+
+<div id='nav'>
+	
+	<ul>
+	  <li><a href="http://www.dogeweather.com">Home</a></li>
+	  <li><a href="http://www.dogeweather.com">Coworkers</a></li>
+	  <li><a href="http://www.dogeweather.com">Contact</a></li>
+	  <li><a href="http://www.dogeweather.com">About</a></li>
+	</ul>
+
+</div>
+
+
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
@@ -22,3 +36,33 @@
   </select>
   <input type='submit'/>
 </form>
+
+<div id='map' onclick="mapClicked()">
+
+	<p> hello i am here <br> this is me <br> this is map </p>
+	<img src="cat.jpg" alt="laser cat">
+	
+
+</div>
+
+
+<script>
+
+function mapClicked() {
+	alert("You have clicked ont he map!");
+}
+
+window.onscroll = function() {stick()};
+
+var navbar = document.getElementById("nav");
+var sticky = navbar.offsetTop;
+
+function stick() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+</script>

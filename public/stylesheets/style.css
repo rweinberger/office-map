@@ -1,8 +1,49 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 40px;
+  padding-top: 5px;
+  font: 14px Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#map {
+	height: 300px;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+}
+
+#nav {
+	list-style-type: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#nav ul {
+	padding: 0px;
+}
+
+#nav li {
+	display: inline;
+	margin-right: 10px;
+}
+
+li a {
+	background-color: #13AA52;
+	color: white;
+	padding: 15px 30px;
+	text-decoration: none;
+}
+
+li a.active {
+	color: black;
+}
+
+li a:hover:not(.active) {
+	background-color: #E65D19;
+	color: white;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }

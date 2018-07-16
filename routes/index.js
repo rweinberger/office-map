@@ -3,6 +3,7 @@ var router = express.Router();
 var database = require('../db.js');
 
 router.get('/', function(req, res, next) {
+<<<<<<< HEAD
   const db = database.get();
   const userCollection = db.collection('users');
   const pinCollection = db.collection('pins');
@@ -40,3 +41,4 @@ const addNewPin = (pin, res) => {
 }
 
 module.exports = router;
+
