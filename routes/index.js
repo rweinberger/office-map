@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var database = require('../db.js');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   const db = database.get();
   const userCollection = db.collection('users');
@@ -33,8 +32,9 @@ const addNewPin = (pin, res) => {
   let id;
 
   pinCollection.insertOne(pin)
-    .then(data => id = data.ops._id)
-    .then(() => userCollection.findOneAndUpdate({userId: pin.userId}, {$push: {pins: id}}))
+    .then(data => id = data.ops[0]._id)
+    .then(() => userCollection.findOneAndUpdate({userId: parseInt(pin.userId)}, {$push: {pins: id}}))
+    .then(data => console.log(data))
     .then(() => res.redirect('/'))
     .catch(e => console.error(e))
 }
