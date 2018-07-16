@@ -3,7 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose');
+var db = require('./db')
+const populate = require('./tools/populate')
 
 var indexRouter = require('./routes/index');
 
@@ -21,12 +22,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
-mongoose.connect('mongodb://localhost/office-map');
-var connection = mongoose.connection;
-connection.on('error', console.error.bind(console, 'connection error:'));
-connection.on('connected', function() {
-  console.log('database connected!');
-});
+db.connect('mongodb://localhost:27017/office-map', 'office-map', function(err) {
+  if (err) {
+    console.log('Unable to connect to Mongo.');
+  } else {
+    console.log('database connected!');
+    populate();
+  }
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
