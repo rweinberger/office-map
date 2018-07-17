@@ -33,32 +33,12 @@
   <input type='submit'/>
 </form>
 
-<div id='map' onclick="mapClicked()">
+<div id='map'>
   {{#each pins}}
     <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px'></div>
   {{/each}}
 	<p> hello i am here <br> this is me <br> this is map </p>
-	<img src="../assets/cat.jpg" alt="laser cat">
+	<!-- <img src="../assets/cat.jpg" alt="laser cat"> -->
 </div>
 
-
-<script>
-
-function mapClicked() {
-	alert("You have clicked on the map!");
-}
-
-window.onscroll = function() {stick()};
-
-var navbar = document.getElementById("nav");
-var sticky = navbar.offsetTop;
-
-function stick() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
 <script src='scripts/mapClick.js'></script>
