@@ -46,7 +46,7 @@ const pins = [
     text: 'hummus stain on floor',
     location: 'rebs desk',
     left: 664,
-    top: 300
+    top: 250
   },
   { userId: 1,
     text: 'stefs desk',
@@ -57,8 +57,8 @@ const pins = [
   { userId: 3,
     text: 'alices desk',
     location: 'near brian',
-    left: 35,
-    top: 287
+    left: 350,
+    top: 220
   }
 ]
 

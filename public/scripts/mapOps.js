@@ -15,19 +15,22 @@ const formSubmitHandler = e => {
   $.ajax({
     type: "POST",
     url: '/new_pin',
-    data: data
+    data: data,
+    success: data => {
+      addPinExtras(data);
+      closeDialog(true);
+    }
   });
-
-  addPinExtras(data);
-  closeDialog(true);
 }
-
-$('.pin').click(preventPropagation);
 
 $('.pin').hover(pinHoverLabel);
 
+$('.modal').click(preventPropagation);
+
 $('#map').click(function(e) {
   if (openDialog) return closeDialog();
+  if (e.target.className === 'pin') return;
+
   pinX = e.pageX - $(this).offset().left - 5;
   pinY = e.pageY - $(this).offset().top - 5;
 
@@ -64,6 +67,11 @@ const addPinExtras = (data) => {
   const hoverLabel = $("<div class='pin-hover-label'>"+data.text+"</div>");
   currentPin.append(hoverLabel);
   currentPin.hover(pinHoverLabel);
+
+  // const modal = $('<div class="modal fade" id="modal-' + data._id + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><h3>' + data.text + '</h3>located at ' + data.location + ', posted by user ' + data.userId + '<br><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div></div></div>')
+  // currentPin.append(modal);
+  // currentPin.attr('data-toggle', 'modal');
+  // currentPin.attr('data-target', '#modal-' + data._id);
 }
 
 const closeDialog = (submitted) => {

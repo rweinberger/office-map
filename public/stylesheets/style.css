@@ -116,7 +116,7 @@ li a:hover:not(.active) {
 }
 
 .pin-dialog:hover {
-  cursor:pointer;
+  cursor: auto;
 }
 
 .pin-hover-label {

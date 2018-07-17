@@ -36,6 +36,10 @@ const addNewPin = (pin, res) => {
   pinCollection.insertOne(pin)
     .then(data => id = data.ops[0]._id)
     .then(() => userCollection.findOneAndUpdate({userId: parseInt(pin.userId)}, {$push: {pins: id}}))
+    .then(() => {
+      pin._id = id;
+      res.send(pin);
+    })
     .catch(e => console.error(e))
 }
 

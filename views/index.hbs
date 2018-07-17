@@ -29,12 +29,20 @@
   <!-- child 1 -->
   <div id='map'>
     {{#each pins}}
-      <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px'>
+      <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px' data-toggle="modal" data-target="#modal-{{this._id}}">
         <div class='pin-hover-label'>{{this.text}}</div>
         <div class='pin-click-label'></div>
       </div>
+      <div class="modal fade" id="modal-{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <h3>{{this.text}}</h3> 
+            located at {{this.location}}, posted by user {{this.userId}}
+            <br><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     {{/each}}
-  	<!-- <p> hello i am here <br> this is me <br> this is map </p> -->
   </div>
 
   <!-- child 2 -->

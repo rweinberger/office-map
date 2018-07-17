@@ -5,6 +5,10 @@ $('#map').on('mousemove', function(e){
   });
 });
 
-$('#map').on('mouseenter mouseleave', function(e){
-  $('#mouse-trail').toggle()
+$('#map').on('mouseenter', function(e){
+  $('#mouse-trail').show()
+});
+
+$('#map').on('mouseleave', function(e){
+  $('#mouse-trail').hide()
 });
