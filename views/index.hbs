@@ -1,12 +1,10 @@
 <div id='nav'>
-	
 	<ul>
 	  <li><a href="http://www.dogeweather.com">Home</a></li>
 	  <li><a href="http://www.dogeweather.com">Coworkers</a></li>
 	  <li><a href="http://www.dogeweather.com">Contact</a></li>
 	  <li><a href="http://www.dogeweather.com">About</a></li>
 	</ul>
-
 </div>
 
 
@@ -35,18 +33,20 @@
   <input type='submit'/>
 </form>
 
-<div id='map'>
+<div id='map' onclick="mapClicked()">
   {{#each pins}}
     <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px'></div>
   {{/each}}
 	<p> hello i am here <br> this is me <br> this is map </p>
-	<!-- <img src="cat.jpg" alt="laser cat"> -->
-	
-
+	<img src="../assets/cat.jpg" alt="laser cat">
 </div>
 
 
 <script>
+
+function mapClicked() {
+	alert("You have clicked on the map!");
+}
 
 window.onscroll = function() {stick()};
 
@@ -60,6 +60,5 @@ function stick() {
     navbar.classList.remove("sticky");
   }
 }
-
 </script>
 <script src='scripts/mapClick.js'></script>
