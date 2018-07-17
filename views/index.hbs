@@ -36,7 +36,9 @@
 </form>
 
 <div id='map'>
-
+  {{#each pins}}
+    <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px'></div>
+  {{/each}}
 	<p> hello i am here <br> this is me <br> this is map </p>
 	<!-- <img src="cat.jpg" alt="laser cat"> -->
 	

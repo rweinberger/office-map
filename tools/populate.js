@@ -26,27 +26,39 @@ const users = [
 const pins = [
   { userId: 1,
     text: 'free half avo',
-    location: 'main cafe'
+    location: 'main cafe',
+    left: 75,
+    top: 75
   },
   { userId: 2,
     text: 'varshas desk!!!',
     location: 'education land',
+    left: 367,
+    top: 188
   },
   { userId: 3,
     text: 'another free half avo',
-    location: 'phase 3'
+    location: 'phase 3',
+    left: 890,
+    top: 72
   },
   { userId: 4,
     text: 'hummus stain on floor',
     location: 'rebs desk',
+    left: 664,
+    top: 300
   },
   { userId: 1,
     text: 'stefs desk',
-    location: 'cloud land'
+    location: 'cloud land',
+    left: 288,
+    top: 243
   },
   { userId: 3,
     text: 'alices desk',
     location: 'near brian',
+    left: 35,
+    top: 287
   }
 ]
 
