@@ -50,12 +50,22 @@ li a:hover:not(.active) {
   width: 100%; 
 }
 
+.g-signin2 {
+	position: absolute;
+    right:40px;
+    top:20px;
+}
+
 .pin {
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 10px;
   background-color: black;
+}
+
+.pin:hover {
+  cursor: pointer;
 }
 
 .pin-dialog {
@@ -68,8 +78,16 @@ li a:hover:not(.active) {
   top: -110px;
 }
 
-.g-signin2 {
-	position: absolute;
-    right:40px;
-    top:20px;
+.pin-hover-label {
+  display: none;
+  background-color: white;
+  width: 100px;
+  position: absolute;
+  border: solid 1px black;
+  left: 20px;
+  top: -5px;
+}
+
+.pin-click-label {
+  display: none;
 }

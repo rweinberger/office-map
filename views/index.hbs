@@ -21,24 +21,17 @@
   <li>{{this.text}} @ {{this.location}}</li>
 {{/each}}
 
-<h2> add pin </h2>
-<form action='/new_pin' method='post'>
-  <input type='text' placeholder='text' name='text'/>
-  <input type='text' placeholder='location' name='location'/>
-  <select name='userId'>
-    {{#each users}}
-      <option value={{this.userId}}>{{this.firstName}}</option>
-    {{/each}}
-  </select>
-  <input type='submit'/>
-</form>
 
 <div id='map'>
   {{#each pins}}
-    <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px'></div>
+    <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px'>
+      <div class='pin-hover-label'>{{this.text}}</div>
+      <div class='pin-click-label'></div>
+    </div>
   {{/each}}
 	<p> hello i am here <br> this is me <br> this is map </p>
 	<!-- <img src="../assets/cat.jpg" alt="laser cat"> -->
 </div>
 
 <script src='scripts/mapClick.js'></script>
+<script src='scripts/pinHover.js'></script>
