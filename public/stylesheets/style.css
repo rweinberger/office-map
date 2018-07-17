@@ -2,20 +2,22 @@ body {
   padding: 40px;
   padding-top: 5px;
   font: 14px Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: white;
 }
 
 #map {
   	position: relative;
 	height: 300px;
-	width: 100%;
+	width: 98%;
 	text-align: center;
 	padding: 10px;
-	border: solid 1px black;
+	/*border: solid 1px black;*/
 	top: 0;
 	left: 0;
 	opacity: 0;
 	-webkit-transition: all 3.5s ease-in-out;
 	transition: all 3.5s ease-in-out;
+	background-color: #f2e5e5;
 }
 
 #nav {
@@ -38,6 +40,7 @@ li a {
 	color: white;
 	padding: 15px 30px;
 	text-decoration: none;
+
 }
 
 li a.active {
@@ -80,8 +83,8 @@ li a:hover:not(.active) {
 
 .g-signin2 {
 	position: absolute;
-    right:40px;
-    top:20px;
+    right:60px;
+    top:25px;
 }
 
 #mouse-trail {
@@ -116,7 +119,7 @@ li a:hover:not(.active) {
 }
 
 .pin-dialog:hover {
-  cursor: auto;
+  cursor:pointer;
 }
 
 .pin-hover-label {
@@ -135,13 +138,15 @@ li a:hover:not(.active) {
 
 #mapText {
 	position: absolute;
+	font-family: 'Tangerine', cursive;
+	font-size: 20px;
 	background-color: #8b0000;
 	color: white;
 	padding: 15px 30px;
 	text-decoration: none;
     margin: auto;
-    margin-top: 270px;
-    margin-left: 450px;
+    margin-top: -50px;
+    margin-left: 405px;
     position: absolute;
     top: 50%;
     left: 115px;
