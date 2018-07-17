@@ -20,8 +20,10 @@ router.post('/new_pin', function(req, res, next) {
   const pin = {
     userId: req.body.userId,
     text: req.body.text,
-    location: req.body.location
-  }
+    location: req.body.location,
+    left: req.body.left,
+    top: req.body.top
+  };
   addNewPin(pin, res);
 });
 
@@ -34,8 +36,6 @@ const addNewPin = (pin, res) => {
   pinCollection.insertOne(pin)
     .then(data => id = data.ops[0]._id)
     .then(() => userCollection.findOneAndUpdate({userId: parseInt(pin.userId)}, {$push: {pins: id}}))
-    .then(data => console.log(data))
-    .then(() => res.redirect('/'))
     .catch(e => console.error(e))
 }
 
