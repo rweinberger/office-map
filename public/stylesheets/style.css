@@ -67,3 +67,9 @@ li a:hover:not(.active) {
   background-color: white;
   top: -110px;
 }
+
+.g-signin2 {
+	position: absolute;
+    right:40px;
+    top:20px;
+}
