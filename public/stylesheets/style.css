@@ -56,6 +56,15 @@ li a:hover:not(.active) {
     top:20px;
 }
 
+#mouse-trail {
+  display: none;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #bdbdbd;
+}
+
 .pin {
   position: absolute;
   width: 10px;
@@ -76,6 +85,10 @@ li a:hover:not(.active) {
   border: solid 1px black;
   background-color: white;
   top: -110px;
+}
+
+.pin-dialog:hover {
+  cursor:pointer;
 }
 
 .pin-hover-label {

@@ -21,7 +21,7 @@
   <li>{{this.text}} @ {{this.location}}</li>
 {{/each}}
 
-
+<div id='mouse-trail'></div>
 <div id='map'>
   {{#each pins}}
     <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px'>
@@ -33,5 +33,5 @@
 	<!-- <img src="../assets/cat.jpg" alt="laser cat"> -->
 </div>
 
-<script src='scripts/mapClick.js'></script>
-<script src='scripts/pinHover.js'></script>
+<script src='scripts/map.js'></script>
+<script src='scripts/mouseTrail.js'></script>

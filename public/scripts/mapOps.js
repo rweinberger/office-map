@@ -4,6 +4,10 @@ const preventPropagation = e => e.stopPropagation();
 
 $('.pin').click(preventPropagation);
 
+$('.pin').hover(function() {
+  $(this).children('.pin-hover-label').toggle();
+});
+
 $('#map').click(function(e) {
   if (openDialog) return closeDialog(openDialog, currentPin);
   const x = e.pageX - $(this).offset().left - 5;
