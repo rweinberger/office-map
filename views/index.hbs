@@ -22,16 +22,76 @@
 {{/each}}
 
 <div id='mouse-trail'></div>
-<div id='map'>
-  {{#each pins}}
-    <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px'>
-      <div class='pin-hover-label'>{{this.text}}</div>
-      <div class='pin-click-label'></div>
-    </div>
-  {{/each}}
-	<p> hello i am here <br> this is me <br> this is map </p>
-	<!-- <img src="../assets/cat.jpg" alt="laser cat"> -->
+
+<!-- parent -->
+<div class="parent">
+
+  <!-- child 1 -->
+  <div id='map'>
+    {{#each pins}}
+      <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px'>
+        <div class='pin-hover-label'>{{this.text}}</div>
+        <div class='pin-click-label'></div>
+      </div>
+    {{/each}}
+  	<p> hello i am here <br> this is me <br> this is map </p>
+  </div>
+
+  <!-- child 2 -->
+  <div id="swear" style="font-size:0px">
+    <img id="swear-left" src="../assets/parch-left.jpg" alt="i swear">
+    <img id="swear-right" src="../assets/parch-right.jpg" alt="i swear">
+  </div>
+
 </div>
+
+<div id='mapText'>
+  <span>I solemnly swear that I am up to no good.</span>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+  $('#mapText').on('click', function() {
+    $('#map').css('opacity', 1);
+  });
+</script>
+
+<script>
+  $("#mapText").click(function() {
+    $("#mapText").fadeOut("normal", function() {
+        $(this).remove();
+    });
+  });
+  $("#mapText").click(function() {
+    $("#swear").delay(700).fadeOut("normal", function() {
+        $(this).remove();
+    });
+  });
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#mapText").click(function() {
+      $("#swear-left").animate({
+        "marginLeft": '-=260px'
+      }, 1000);
+    });
+  });
+
+  $(document).ready(function() {
+    $("#mapText").click(function() {
+      $("#swear-right").animate({
+        "marginLeft": '+=500px'
+      }, 1000);
+    });
+  });
+</script>
+
+<script>
 
 <script src='scripts/mapOps.js'></script>
 <script src='scripts/mouseTrail.js'></script>

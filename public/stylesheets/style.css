@@ -5,12 +5,17 @@ body {
 }
 
 #map {
-  position: relative;
+  	position: relative;
 	height: 300px;
 	width: 100%;
 	text-align: center;
 	padding: 10px;
-  border: solid 1px black;
+	border: solid 1px black;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	-webkit-transition: all 3.5s ease-in-out;
+	transition: all 3.5s ease-in-out;
 }
 
 #nav {
@@ -29,7 +34,7 @@ body {
 }
 
 li a {
-	background-color: #13AA52;
+	background-color: #8b0000;
 	color: white;
 	padding: 15px 30px;
 	text-decoration: none;
@@ -40,14 +45,37 @@ li a.active {
 }
 
 li a:hover:not(.active) {
-	background-color: #E65D19;
+	background-color: #9f0000;
 	color: white;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%; 
+.parent {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#swear {
+ 	position: absolute;
+/*	height: 100px;
+	width: 800px;*/
+	text-align: center;
+	padding: 10px;
+	top: -50px;
+	left: 270px;
+	margin: 0 auto;
+}
+
+#swear-left {
+	height: 400px;
+	width: 400px;
+	left: 50px;
+}
+
+#swear-right {
+	height: 400px;
+	width: 400px;
+	left: 50px;
 }
 
 .g-signin2 {
@@ -104,3 +132,23 @@ li a:hover:not(.active) {
 .pin-click-label {
   display: none;
 }
+
+#mapText {
+	position: absolute;
+	background-color: #8b0000;
+	color: white;
+	padding: 15px 30px;
+	text-decoration: none;
+    margin: auto;
+    margin-top: 270px;
+    margin-left: 450px;
+    position: absolute;
+    top: 50%;
+    left: 115px;
+}
+
+#mapText:hover {
+	background-color: #9f0000;
+	cursor: pointer;
+}
+
