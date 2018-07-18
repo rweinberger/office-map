@@ -25,6 +25,7 @@ const users = [
 
 const pins = [
   { userId: 1,
+    userName: 'Stef Wang',
     text: 'free half avo',
     location: 'main cafe',
     left: 75,
@@ -32,6 +33,7 @@ const pins = [
     date: new Date(2018, 7, 4, 15, 26)
   },
   { userId: 2,
+    userName: 'Varsha Subrahmanyam',
     text: 'varshas desk!!!',
     location: 'education land',
     left: 367,
@@ -39,6 +41,7 @@ const pins = [
     date: new Date(2018, 6, 14, 9, 14)
   },
   { userId: 3,
+    userName: 'Alice Thum',
     text: 'another free half avo',
     location: 'phase 3',
     left: 890,
@@ -46,6 +49,7 @@ const pins = [
     date: new Date(2018, 5, 22, 13, 21)
   },
   { userId: 4,
+    userName: 'Rebecca Weinberger',
     text: 'hummus stain on floor',
     location: 'rebs desk',
     left: 664,
@@ -53,6 +57,7 @@ const pins = [
     date: new Date(2018, 4, 19, 11, 45)
   },
   { userId: 1,
+    userName: 'Stef Wang',
     text: 'stefs desk',
     location: 'cloud land',
     left: 588,
@@ -60,6 +65,7 @@ const pins = [
     date: new Date(2018, 3, 3, 21, 51)
   },
   { userId: 3,
+    userName: 'Alice Thum',
     text: 'alices desk',
     location: 'near brian',
     left: 850,

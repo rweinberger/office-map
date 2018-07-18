@@ -11,6 +11,12 @@
 <h1>{{title}}</h1>
 <p>LETS THINK OF A NAME</p>
 
+{{#if user}}
+<p>Welcome, {{user.firstName}}. <a href='/logout'>logout</a></p>
+{{else}}
+<p>Please <a href='/auth/google'>sign in</a> to add pins!</p>
+{{/if}}
+
 <div id='mouse-trail'></div>
 <div id='map'>
   {{#each pins}}
@@ -23,7 +29,7 @@
         <div class="modal-content">
           <h3>{{this.text}}</h3> 
           located at {{this.location}}<br>
-          posted by user {{this.userId}} at {{this.hour}}:{{this.minute}} on {{this.month}}/{{this.day}}/{{this.year}}<br>
+          posted by {{this.userName}} at {{this.hour}}:{{this.minute}} on {{this.month}}/{{this.day}}/{{this.year}}<br>
           <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -83,5 +89,7 @@
   });
 </script>
 
+{{#if user}}
 <script src='scripts/mapOps.js'></script>
 <script src='scripts/mouseTrail.js'></script>
+{{/if}}
