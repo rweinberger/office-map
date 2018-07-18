@@ -1,23 +1,29 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   padding: 40px;
   padding-top: 5px;
   font: 14px Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: white;
+  background-color: #c7c7c7;
 }
 
 #map {
-  	position: relative;
-	height: 300px;
+  position: relative;
 	width: 98%;
+  height: 75%;
 	text-align: center;
 	padding: 10px;
-	/*border: solid 1px black;*/
+  border: solid 1px black;
 	top: 0;
 	left: 0;
-	opacity: 0;
-	-webkit-transition: all 3.5s ease-in-out;
-	transition: all 3.5s ease-in-out;
-	background-color: #f2e5e5;
+	/*opacity: 0;*/
+/*	-webkit-transition: all 3.5s ease-in-out;
+	transition: all 3.5s ease-in-out;*/
+	background-image: url('/assets/dummy_plan.jpg');
+  background-size: cover;
 }
 
 #nav {
@@ -83,25 +89,31 @@ li a:hover:not(.active) {
 
 .g-signin2 {
 	position: absolute;
-    right:60px;
-    top:25px;
+  right:60px;
+  top:25px;
 }
 
 #mouse-trail {
   display: none;
+  z-index: 1;
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 10px;
   background-color: #bdbdbd;
+  pointer-events: none;
 }
 
 .pin {
+  z-index: 2;
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 10px;
-  background-color: black;
+  background-color: #26bd39;
+  -webkit-box-shadow: 0px 0px 0px 19px rgba(38,189,57,0.25);
+  -moz-box-shadow: 0px 0px 0px 19px rgba(38,189,57,0.25);
+  box-shadow: 0px 0px 0px 19px rgba(38,189,57,0.25);
 }
 
 .pin:hover {
@@ -123,6 +135,7 @@ li a:hover:not(.active) {
 }
 
 .pin-hover-label {
+  z-index: 3;
   display: none;
   background-color: white;
   width: 100px;
@@ -144,12 +157,12 @@ li a:hover:not(.active) {
 	color: white;
 	padding: 15px 30px;
 	text-decoration: none;
-    margin: auto;
-    margin-top: -50px;
-    margin-left: 405px;
-    position: absolute;
-    top: 50%;
-    left: 115px;
+  margin: auto;
+  margin-top: -50px;
+  margin-left: 405px;
+  position: absolute;
+  top: 50%;
+  left: 115px;
 }
 
 #mapText:hover {
@@ -157,3 +170,15 @@ li a:hover:not(.active) {
 	cursor: pointer;
 }
 
+.modal {
+  top: 30%;
+}
+
+.modal-dialog {
+  width: 400px;
+  height: 200px;
+}
+
+.close-modal {
+  margin: 15px;
+}

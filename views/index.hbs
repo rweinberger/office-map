@@ -9,55 +9,41 @@
 
 
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-
-<!-- <h2> active users </h2>
-{{#each users}}
-  <li>{{this.firstName}} {{this.lastName}}</li>
-{{/each}}
-
-<h2> pins </h2>
-{{#each pins}}
-  <li>{{this.text}} @ {{this.location}}</li>
-{{/each}} -->
+<p>LETS THINK OF A NAME</p>
 
 <div id='mouse-trail'></div>
-
+<div id='map'>
+  {{#each pins}}
+    <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px' data-toggle="modal" data-target="#modal-{{this._id}}">
+      <div class='pin-hover-label'>{{this.text}}</div>
+      <div class='pin-click-label'></div>
+    </div>
+    <div class="modal fade" id="modal-{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <h3>{{this.text}}</h3> 
+          located at {{this.location}}<br>
+          posted by user {{this.userId}} at {{this.hour}}:{{this.minute}} on {{this.month}}/{{this.day}}/{{this.year}}<br>
+          <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
 <!-- parent -->
 <div class="parent">
 
-  <!-- child 1 -->
-  <div id='map'>
-    {{#each pins}}
-      <div class='pin' style='top:{{this.top}}px; left:{{this.left}}px' data-toggle="modal" data-target="#modal-{{this._id}}">
-        <div class='pin-hover-label'>{{this.text}}</div>
-        <div class='pin-click-label'></div>
-      </div>
-      <div class="modal fade" id="modal-{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <h3>{{this.text}}</h3> 
-            located at {{this.location}}, posted by user {{this.userId}}
-            <br><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    {{/each}}
-  </div>
-
   <!-- child 2 -->
-  <div id="swear" style="font-size:0px">
+<!--   <div id="swear" style="font-size:0px">
     <img id="swear-left" src="../assets/parch-left.jpg" alt="i swear">
     <img id="swear-right" src="../assets/parch-right.jpg" alt="i swear">
-  </div>
+  </div> -->
 
 </div>
 
-<div id='mapText'>
+<!-- <div id='mapText'>
   <span>I solemnly swear that I am up to no good.</span>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</div> -->
 
 <script>
   $('#mapText').on('click', function() {
@@ -78,8 +64,6 @@
   });
 
 </script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function() {
